@@ -2,4 +2,7 @@ https://trefx.uk/5s-crate/0.4/ro-crate-metadata.json
 https://www.researchobject.org/workflow-run-crate/profiles/0.5/process_run_crate/ro-crate-metadata.json
 https://www.researchobject.org/workflow-run-crate/profiles/0.5/workflow_run_crate/ro-crate-metadata.json
 https://www.researchobject.org/workflow-run-crate/profiles/0.5/provenance_run_crate/ro-crate-metadata.json
+https://w3id.org/ro/wfrun/process/0.6
+https://w3id.org/ro/wfrun/workflow/0.6
+https://w3id.org/ro/wfrun/provenance/0.6
 https://www.researchobject.org/ro-crate/specification/1.2/ro-crate-metadata.json
