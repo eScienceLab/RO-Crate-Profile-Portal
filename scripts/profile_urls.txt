@@ -3,3 +3,4 @@ https://www.researchobject.org/workflow-run-crate/profiles/0.5/process_run_crate
 https://www.researchobject.org/workflow-run-crate/profiles/0.5/workflow_run_crate/ro-crate-metadata.json
 https://www.researchobject.org/workflow-run-crate/profiles/0.5/provenance_run_crate/ro-crate-metadata.json
 https://www.researchobject.org/ro-crate/specification/1.2/ro-crate-metadata.json
+https://about.workflowhub.eu/Workflow-RO-Crate/ro-crate-metadata.json
