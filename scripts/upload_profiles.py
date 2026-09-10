@@ -12,6 +12,13 @@ from urllib.parse import urljoin
 
 
 SCHEMA = Namespace("http://schema.org/")
+NON_ROCRATE_PROFILES = [
+    URIRef("https://codemeta.github.io/terms/"),
+    URIRef("https://w3id.org/codemeta/3.0"),
+    URIRef("http://www.w3.org/ns/json-ld#flattened"),
+    URIRef("https://bioschemas.org/profiles/ComputationalWorkflow/1.0-RELEASE"),
+    URIRef("https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE")
+]
 
 def map_sameas_uri(uri):
         id = md5(uri.encode('utf-8')).hexdigest()
@@ -76,13 +83,14 @@ def main(dry_run):
             g.remove((s, p, o))
 
         # Create profile URI for use in the profile portal
-        if p == RDF.type and o == profile_class:
+        if p == RDF.type and o == profile_class and s not in NON_ROCRATE_PROFILES:
             new_s = map_sameas_uri(s)
             g.add((new_s, RDF.type, o))
             g.add((new_s, OWL.sameAs, s))
 
         # Add triple <new profile URI> schema:datePublished "yyyy-mm-dd"^^xsd:date
-        if p == SCHEMA.datePublished and typed_o is not None:
+        if (p == SCHEMA.datePublished and typed_o is not None
+            and (s, RDF.type, profile_class) in g and s not in NON_ROCRATE_PROFILES):
             value = typed_o.toPython()
             if isinstance(value, datetime):
                 new_s = map_sameas_uri(s)
