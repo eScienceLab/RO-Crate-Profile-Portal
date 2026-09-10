@@ -7,6 +7,7 @@ https://w3id.org/ro/wfrun/workflow/0.6
 https://w3id.org/ro/wfrun/provenance/0.6
 https://www.researchobject.org/ro-crate/specification/1.2/ro-crate-metadata.json
 https://w3id.org/ro/crate/1.3
+https://w3id.org/fairscape/profile/0.1/ro-crate-metadata.json
 https://language-research-technology.github.io/ldac-profile/masp-profile/profile-crate/ro-crate-metadata.json
 https://about.workflowhub.eu/Workflow-RO-Crate/ro-crate-metadata.json
 https://nfdi4plants.github.io/arc-ro-crate-profile/profiles/administrative_crate/ro-crate-metadata.jsonld
