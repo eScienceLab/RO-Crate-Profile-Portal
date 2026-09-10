@@ -6,3 +6,8 @@ https://w3id.org/ro/wfrun/process/0.6
 https://w3id.org/ro/wfrun/workflow/0.6
 https://w3id.org/ro/wfrun/provenance/0.6
 https://www.researchobject.org/ro-crate/specification/1.2/ro-crate-metadata.json
+https://nfdi4plants.github.io/arc-ro-crate-profile/profiles/administrative_crate/ro-crate-metadata.jsonld
+https://nfdi4plants.github.io/arc-ro-crate-profile/profiles/datamap_crate/ro-crate-metadata.jsonld
+https://nfdi4plants.github.io/arc-ro-crate-profile/profiles/process_core_crate/ro-crate-metadata.jsonld
+https://nfdi4plants.github.io/arc-ro-crate-profile/profiles/wr_ro_crate/ro-crate-metadata.jsonld
+https://nfdi4plants.github.io/arc-ro-crate-profile/profiles/isa_ro_crate/ro-crate-metadata.json
