@@ -31,8 +31,11 @@ export const profileProperties = `
     UNION
     {
       ?id owl:sameAs/ns11:author ?author__id .
-      ?author__id ns11:name ?author__prefLabel .
-      BIND(?author__id as ?author__dataProviderUrl)
+      OPTIONAL { 
+        ?author__id ns11:name ?author__label1
+        BIND(?author__id AS ?author__dataProviderUrl)
+      }
+      BIND(COALESCE(?author__label1, ?author__id) AS ?author__prefLabel)
     }
     UNION
     {
