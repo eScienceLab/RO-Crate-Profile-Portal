@@ -101,7 +101,7 @@
             "externalLink": false,
             "sortValues": true,
             "numberedList": false,
-            "minWidth": 250
+            "minWidth": 100
         },
         {
             "id": "publicationDate",
@@ -110,7 +110,7 @@
             "externalLink": false,
             "sortValues": true,
             "numberedList": false,
-            "minWidth": 250
+            "minWidth": 200
         },
         {
             "id": "author",
