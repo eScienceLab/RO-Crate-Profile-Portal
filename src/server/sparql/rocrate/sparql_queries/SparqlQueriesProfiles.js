@@ -12,8 +12,11 @@ export const profileProperties = `
     UNION
     {
       ?id owl:sameAs/ns11:identifier ?identifier__id .
-      BIND(?identifier__id AS ?identifier__prefLabel)
-      BIND(?identifier__id as ?identifier__dataProviderUrl)
+      OPTIONAL { ?identifier__id ns11:name ?identifier__label1 }
+      OPTIONAL { ?identifier__id ns11:value ?identifier__label2 }
+      OPTIONAL { ?identifier__id ns11:url ?identifier__url1 }
+      BIND(COALESCE(?identifier__label1, ?identifier__label2, ?identifier__id) AS ?identifier__prefLabel)
+      BIND(COALESCE(?identifier__url1, ?identifier__id) as ?identifier__dataProviderUrl)
     }
     UNION
     {
