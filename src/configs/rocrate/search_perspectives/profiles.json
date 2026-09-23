@@ -149,11 +149,11 @@
             "facetType": "list",
             "filterType": "uriFilter",
             "facetLabelPredicate": "ns11:name",
-            "predicate": "owl:sameAs/ns11:author",
+            "predicate": "ns11:author",
             "searchField": true,
             "sortButton": true,
             "sortBy": "instanceCount",
-            "sortByPredicate": "owl:sameAs/ns11:author/ns11:name",
+            "sortByPredicate": "ns11:author/ns11:name",
             "sortDirection": "desc"
         },
         "keyword": {
