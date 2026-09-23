@@ -76,6 +76,16 @@
             "minWidth": 250
         },
         {
+            "id": "description",
+            "valueType": "object",
+            "makeLink": false,
+            "externalLink": false,
+            "sortValues": true,
+            "numberedList": false,
+            "minWidth": 300,
+            "collapsedMaxWords": 15
+        },
+        {
             "id": "identifier",
             "valueType": "object",
             "makeLink": true,
@@ -129,6 +139,9 @@
             "sortByPredicate": "owl:sameAs/ns11:name",
             "textQueryPredicate": "owl:sameAs",
             "textQueryProperty": "ns11:name"
+        },
+        "description": {
+            "sortByPredicate": "owl:sameAs/ns11:description"
         },
         "identifier": {
             "sortByPredicate": "owl:sameAs/ns11:identifier"
