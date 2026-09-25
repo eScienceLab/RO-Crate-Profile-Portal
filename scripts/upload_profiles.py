@@ -25,6 +25,14 @@ def map_sameas_uri(uri, type):
         new_uri = URIRef(f"https://profiles.ro-crate.org/data/{type}/{id}")
         return new_uri
 
+def normalise_schema(*args):
+    entities = []
+    for e in args:
+        if isinstance(e, URIRef):
+            e = URIRef(str(e).replace("https://schema.org", "http://schema.org"))
+        entities.append(e)
+    return tuple(entities)
+
 def main(dry_run):
     g = Graph()
     profile_class = URIRef("http://www.w3.org/ns/dx/prof/Profile")
@@ -68,6 +76,12 @@ def main(dry_run):
     time_pattern = re.compile(r"^\d{2}:\d{2}:\d{2}(Z|z|[+-]\d{2}:\d{2})?$")
 
     for s, p, o in g.triples((None, None, None)):
+        old_triple = (s, p, o)
+        s, p, o = normalise_schema(s, p, o)
+        if (s, p, o) != old_triple:
+            g.remove(old_triple)
+            g.add((s, p, o))
+
         typed_o = None
 
         if datetime_pattern.match(o):
