@@ -1,7 +1,8 @@
 @prefix schema: <http://schema.org/> .
+@prefix prof: <http://www.w3.org/ns/dx/prof/> .
 
 <https://w3id.org/workflowhub/workflow-ro-crate/1.0> 
-    a schema:Profile ;
+    a prof:Profile ;
     schema:keywords "workflow" .
 <https://w3id.org/ro/wfrun/process/0.5> 
     schema:datePublished "2024-06-19";
