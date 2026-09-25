@@ -63,19 +63,19 @@ def main(dry_run):
 
     g.parse("gaps.ttl", format="turtle")
 
-    datetime_pattern = re.compile(r"^-?\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}(Z|[+-]\d{2}:\d{2})?$")
+    datetime_pattern = re.compile(r"^-?\d{4}-\d{2}-\d{2}[Tt]\d{2}:\d{2}:\d{2}([.,]\d+)?(Z|z|[+-]\d{2}:\d{2})?$")
     date_pattern = re.compile(r"^-?\d{4}-\d{2}-\d{2}$")
-    time_pattern = re.compile(r"^\d{2}:\d{2}:\d{2}(Z|[+-]\d{2}:\d{2})?$")
+    time_pattern = re.compile(r"^\d{2}:\d{2}:\d{2}(Z|z|[+-]\d{2}:\d{2})?$")
 
     for s, p, o in g.triples((None, None, None)):
         typed_o = None
 
         if datetime_pattern.match(o):
-            typed_o = Literal(o, datatype=XSD.dateTime)
+            typed_o = Literal(o.upper(), datatype=XSD.dateTime)
         elif date_pattern.match(o):
             typed_o = Literal(o, datatype=XSD.date)
         elif time_pattern.match(o):
-            typed_o = Literal(o, datatype=XSD.time)
+            typed_o = Literal(o.upper(), datatype=XSD.time)
 
         # Add type to datetime, date and time data
         if typed_o is not None:
