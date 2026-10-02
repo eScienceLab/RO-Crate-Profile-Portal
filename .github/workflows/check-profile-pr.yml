@@ -22,13 +22,13 @@ jobs:
             echo "changed=false" >> "$GITHUB_OUTPUT"
           fi
       - name: Install dependencies
-        if: steps.changes.outputs.changed == 'true'
+        if: steps.changes.outputs.changed == 'true' || github.event_name == 'workflow_dispatch'
         run: python3 -m pip install -r requirements.workflow.txt
       - name: Validate profiles
-        if: steps.changes.outputs.changed == 'true'
+        if: steps.changes.outputs.changed == 'true' || github.event_name == 'workflow_dispatch'
         run: python validate_profiles.py
         working-directory: ./scripts
       - name: Upload profiles (dry run)
-        if: steps.changes.outputs.changed == 'true'
+        if: steps.changes.outputs.changed == 'true' || github.event_name == 'workflow_dispatch'
         run: python upload_profiles.py --dry-run
         working-directory: ./scripts
