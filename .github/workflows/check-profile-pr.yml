@@ -24,7 +24,11 @@ jobs:
       - name: Install dependencies
         if: steps.changes.outputs.changed == 'true'
         run: python3 -m pip install -r requirements.workflow.txt
-      - name: Run script
+      - name: Validate profiles
+        if: steps.changes.outputs.changed == 'true'
+        run: python validate_profiles.py
+        working-directory: ./scripts
+      - name: Upload profiles (dry run)
         if: steps.changes.outputs.changed == 'true'
         run: python upload_profiles.py --dry-run
         working-directory: ./scripts
