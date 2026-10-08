@@ -1,10 +1,24 @@
 import requests
+import subprocess
 import validators
 
 
 def get_profile_urls():
     with open("profile_urls.txt", "r") as file:
         profile_urls = [line.strip() for line in file if line.strip()]
+    return profile_urls
+
+def get_changed_profile_urls(base_sha, head_sha):
+    result = subprocess.run(
+        ["git", "diff", "--unified=0", base_sha, head_sha, "--", "profile_urls.txt"],
+        capture_output=True,
+        text=True,
+        check=True,
+    )
+    profile_urls = []
+    for line in result.stdout.splitlines():
+        if line.startswith("+") and not line.startswith("+++"):
+            profile_urls.append(line[1:])
     return profile_urls
 
 def validate_url_content_type(url):

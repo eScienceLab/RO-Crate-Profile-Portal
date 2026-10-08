@@ -1,13 +1,20 @@
+import os
+import argparse
 import requests
 
+from dotenv import load_dotenv
 from rocrate_validator import services
 
-from utils import get_profile_urls, validate_url_content_type
+from utils import get_profile_urls, get_changed_profile_urls, validate_url_content_type
 
 
-def main():
+def main(changed_only):
     invalid_count = 0
-    profile_urls = get_profile_urls()
+
+    if changed_only:
+        profile_urls = get_changed_profile_urls(os.getenv('BASE_SHA'), os.getenv('HEAD_SHA'))
+    else:
+        profile_urls = get_profile_urls()
 
     for url in profile_urls:
         validate_url_content_type(url)
@@ -44,4 +51,8 @@ def main():
         raise ValueError(f"{invalid_count} invalid crate metadata found.")
 
 if __name__ == "__main__":
-    main()
+    load_dotenv()
+    parser = argparse.ArgumentParser(description="Validate profile RO Crates")
+    parser.add_argument("--changed-only", action="store_true")
+    args = parser.parse_args()
+    main(args.changed_only)
