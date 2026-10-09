@@ -17,3 +17,5 @@ https://nfdi4plants.github.io/arc-ro-crate-profile/profiles/wr_ro_crate/ro-crate
 https://nfdi4plants.github.io/arc-ro-crate-profile/profiles/isa_ro_crate/ro-crate-metadata.json
 https://fair2adapt.github.io/cca-crate-profile/ro-crate-metadata.json
 https://tumi8.github.io/rise-ro-crate-profile/1.0.0/ro-crate-metadata.json
+https://w3id.org/quilt/ro-crate/0.1
+https://w3id.org/quilt/ro-crate/0.2
