@@ -11,6 +11,11 @@ export const profileProperties = `
     }
     UNION
     {
+      ?id owl:sameAs/ns11:description ?description__id .
+      BIND(?description__id AS ?description__prefLabel)
+    }
+    UNION
+    {
       ?id owl:sameAs/ns11:identifier ?identifier__id .
       OPTIONAL { ?identifier__id ns11:name ?identifier__label1 }
       OPTIONAL { ?identifier__id ns11:value ?identifier__label2 }
