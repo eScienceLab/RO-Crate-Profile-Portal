@@ -2,6 +2,8 @@ import requests
 import subprocess
 import validators
 
+from constants import VALIDATION_EXCEPTIONS
+
 
 def get_profile_urls():
     with open("profile_urls.txt", "r") as file:
@@ -20,6 +22,12 @@ def get_changed_profile_urls(base_sha, head_sha):
         if line.startswith("+") and not line.startswith("+++"):
             profile_urls.append(line[1:])
     return profile_urls
+
+def skip_profile(profile_url):
+    return VALIDATION_EXCEPTIONS.get(profile_url, {}).get("skip_profile", False)
+
+def get_skipped_checks(profile_url):
+    return VALIDATION_EXCEPTIONS.get(profile_url, {}).get("skip_checks", [])
 
 def validate_url_content_type(url):
     if not validators.url(url):
