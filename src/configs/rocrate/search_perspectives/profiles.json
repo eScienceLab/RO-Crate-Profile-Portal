@@ -83,7 +83,7 @@
             "sortValues": true,
             "numberedList": false,
             "minWidth": 300,
-            "collapsedMaxWords": 15
+            "collapsedMaxWords": 50
         },
         {
             "id": "identifier",
