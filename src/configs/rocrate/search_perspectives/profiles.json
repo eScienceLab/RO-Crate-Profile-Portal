@@ -24,7 +24,7 @@
                 "tabPath": "table",
                 "tabIcon": "CalendarViewDay",
                 "propertiesQueryBlock": "profileProperties",
-                "pagesize": 10,
+                "pagesize": 25,
                 "sortBy": null,
                 "sortDirection": null
             },
@@ -76,6 +76,16 @@
             "minWidth": 250
         },
         {
+            "id": "description",
+            "valueType": "object",
+            "makeLink": false,
+            "externalLink": false,
+            "sortValues": true,
+            "numberedList": false,
+            "minWidth": 300,
+            "collapsedMaxWords": 50
+        },
+        {
             "id": "identifier",
             "valueType": "object",
             "makeLink": true,
@@ -91,7 +101,7 @@
             "externalLink": false,
             "sortValues": true,
             "numberedList": false,
-            "minWidth": 250
+            "minWidth": 100
         },
         {
             "id": "publicationDate",
@@ -100,7 +110,7 @@
             "externalLink": false,
             "sortValues": true,
             "numberedList": false,
-            "minWidth": 250
+            "minWidth": 200
         },
         {
             "id": "author",
@@ -130,6 +140,9 @@
             "textQueryPredicate": "owl:sameAs",
             "textQueryProperty": "ns11:name"
         },
+        "description": {
+            "sortByPredicate": "owl:sameAs/ns11:description"
+        },
         "identifier": {
             "sortByPredicate": "owl:sameAs/ns11:identifier"
         },
@@ -149,11 +162,11 @@
             "facetType": "list",
             "filterType": "uriFilter",
             "facetLabelPredicate": "ns11:name",
-            "predicate": "owl:sameAs/ns11:author",
+            "predicate": "ns11:author",
             "searchField": true,
             "sortButton": true,
             "sortBy": "instanceCount",
-            "sortByPredicate": "owl:sameAs/ns11:author/ns11:name",
+            "sortByPredicate": "ns11:author/ns11:name",
             "sortDirection": "desc"
         },
         "keyword": {
