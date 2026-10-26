@@ -19,4 +19,5 @@ https://fair2adapt.github.io/cca-crate-profile/ro-crate-metadata.json
 https://tumi8.github.io/rise-ro-crate-profile/1.0.0/ro-crate-metadata.json
 https://w3id.org/quilt/ro-crate/0.1
 https://w3id.org/quilt/ro-crate/0.2
+https://w3id.org/quilt/ro-crate/0.3
 https://w3id.org/ro/bg-crate/0.2
